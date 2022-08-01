@@ -9,4 +9,4 @@ def home():
     return 'welcome from vue flask app test 22 github'
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0')
