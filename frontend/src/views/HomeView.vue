@@ -1,18 +1,24 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>{{flask_mess}}</h1>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+const axios = require('axios').default;
 
 export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
+
+  data(){
+    return{
+      flask_mess : ''
+    }
+  },
+  created(){
+    axios.get('http://127.0.0.1:5000')
+    .then( (res) => this.flask_mess=res.data )
+    .catch( (err) => console.log(err) )
   }
 }
 </script>
