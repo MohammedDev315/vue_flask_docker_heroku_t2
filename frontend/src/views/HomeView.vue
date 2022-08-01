@@ -16,7 +16,7 @@ export default {
     }
   },
   created(){
-    axios.get('http://0.0.0.0:5000')
+    axios.get('http://localhost:5000')
     .then( (res) => this.flask_mess=res.data )
     .catch( (err) => console.log(err) )
   }
