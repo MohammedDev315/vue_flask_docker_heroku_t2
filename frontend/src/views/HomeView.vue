@@ -16,7 +16,7 @@ export default {
     }
   },
   created(){
-    consol.log('This is create')
+    //consol.log('This is create')
     axios.get('https://api-flask-test1.herokuapp.com')
     //axios.get('http://0.0.0.0:5000')
     .then( (res) => this.flask_mess=res.data )
